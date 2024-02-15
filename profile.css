@@ -1,0 +1,123 @@
+
+
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.user-info {
+    background-color: rgba(243, 243, 243, 1);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px 0;
+    width: 40%;
+}
+
+.user-title {
+    padding-top: 20px;
+    padding-left: 40px;
+}
+
+.user-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.user-info .form-container-general {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    width: 80%;
+    padding-inline: 40px;
+}
+
+.form-container-user-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-container-one,
+.form-container-two {
+    flex: 1;
+}
+
+.form-container-two {
+    margin-left: 20px; /* Add space between the first and second columns */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-address {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 100%
+}
+
+.form-address button {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.order-history {
+    margin: 40px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    flex: 1;
+    margin: 0 10px;
+}
+
+footer a {
+    color: white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+input,
+textarea {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #333;
+    border-radius: 10px;
+}
+
+.save-button {
+    background-color: #950C3D;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    margin: 20px;
+    align-self: center; 
+}
+
+/* Add any additional styling for icons or specific elements as needed */
+

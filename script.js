@@ -1,3 +1,7 @@
+// Define these variables at the beginning of your script so they are accessible globally
+var defaultHeader = document.getElementById('defaultHeader');
+var profileHeader = document.getElementById('profileHeader');
+
 function openSignInModal() {
     document.getElementById('authorizationBox').style.display = 'block';
     document.getElementById('overlay').style.display = 'block';
@@ -34,8 +38,12 @@ function closeRegistrationBox() {
     document.getElementById('overlay').style.display = 'none';
 }
 
+function authorizeUser() {
+    closeSignInModal();
+    defaultHeader.style.display = 'none';
+    profileHeader.style.display = 'block';
+}
+
 function registerUser() {
-    // Add your registration logic here
-    // You can retrieve values from the input fields and perform the registration process
-    // For example, you can use document.getElementById('name').value to get the value of the name input field
+    
 }

@@ -12,7 +12,7 @@ body {
 
 header {
     background-color: #fff; 
-    /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adjust as needed */
+    /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
 }
 
 nav ul {
@@ -533,6 +533,12 @@ button {
 }
 
 .form-container-gen {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.form-container-gen-one{
     display: flex;
     flex-direction: row;
     margin-top: 20px;
