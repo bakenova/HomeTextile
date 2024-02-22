@@ -8,10 +8,10 @@
 					<a href="<?= SITE_DIR ?>/about-us.php">About Us</a>
 				</li>
 				<li>
-					<a href="<?= SITE_DIR ?>/team.html">Our Team</a>
+					<a href="<?= SITE_DIR ?>/team.php">Our Team</a>
 				</li>
 				<li>
-					<a href="<?= SITE_DIR ?>/locations.html">Locations</a>
+					<a href="<?= SITE_DIR ?>/locations.php">Locations</a>
 				</li>
 			</ul>
 		</div>
@@ -20,13 +20,13 @@
 			<h4>Products</h4>
 			<ul>
 				<li>
-					<a href="<?= SITE_DIR ?>/catalog.html">Bedding</a>
+					<a href="<?= SITE_DIR ?>/catalog.php">Bedding</a>
 				</li>
 				<li>
-					<a href="<?= SITE_DIR ?>/catalog.html">Bedcover</a>
+					<a href="<?= SITE_DIR ?>/catalog.php">Bedcover</a>
 				</li>
 				<li>
-					<a href="<?= SITE_DIR ?>/catalog.html">Others</a>
+					<a href="<?= SITE_DIR ?>/catalog.php">Others</a>
 				</li>
 			</ul>
 		</div>
@@ -73,3 +73,6 @@
 
 	<p class="copyright-text">© 2024 Home Textile. All rights reserved.</p>
 </footer>
+
+<script src="<?= SITE_DIR ?>/local/assets/libraries/sweetalert2/dist/sweetalert2.min.js"></script>
+<script src="<?= SITE_DIR ?>/local/assets/js/script.js"></script>

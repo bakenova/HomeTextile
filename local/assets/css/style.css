@@ -533,7 +533,13 @@ button {
 
 .form-container-gen {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
+	margin-top: 20px;
+}
+
+.form-container-gen-reg {
+	display: flex;
+	flex-direction: row;
 	margin-top: 20px;
 }
 
@@ -554,6 +560,7 @@ button {
 	display: flex;
 	flex-direction: column;
 	margin-right: 20px;
+	width: 50%;
 }
 
 #registrationBox input {

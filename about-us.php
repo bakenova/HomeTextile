@@ -1,19 +1,13 @@
 <?php
-require_once "./local/source/init.php"
+require_once "./local/templates/prolog.php";
+require_once "./local/source/init.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>About Us</title>
-	<link rel="stylesheet" href="<?= SITE_DIR ?>/local/assets/css/style.css">
-	<link rel="stylesheet" href="local/assets/css/about.css">
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-	<link rel="icon" href="images/logo.png" type="image/x-icon">
-</head>
+<?php
+include $_SERVER['DOCUMENT_ROOT'].SITE_DIR."/local/templates/head.php";
+?>
 
 <body>
 
@@ -105,7 +99,9 @@ include $_SERVER['DOCUMENT_ROOT'].SITE_DIR."/local/templates/header.php";
 include $_SERVER['DOCUMENT_ROOT'].SITE_DIR."/local/templates/footer.php";
 ?>
 
-<script src="<?= SITE_DIR ?>/local/assets/js/script.js"></script>
 </body>
 
 </html>
+<?php
+require_once "./local/templates/epilog.php";
+?>

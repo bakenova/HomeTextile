@@ -1,5 +1,6 @@
 <?php
-require_once "./local/source/init.php"
+require_once "./local/templates/prolog.php";
+require_once "./local/source/init.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -64,34 +65,34 @@ include $_SERVER['DOCUMENT_ROOT'].SITE_DIR."/local/templates/modal-register.php"
 	<h2>Quality home textiles:</h2>
 
 	<div class="textile-blocks">
-		<a href="<?= SITE_DIR ?>/catalog.html" class="textile-block-1">
+		<a href="<?= SITE_DIR ?>/catalog.php" class="textile-block-1">
 			<img src="<?= SITE_DIR ?>/local/assets/images/menu1.png" alt="Textile 1">
 			<p>Bedding</p>
 		</a>
 
-		<a href="<?= SITE_DIR ?>/catalog.html" class="textile-block-2">
+		<a href="<?= SITE_DIR ?>/catalog.php" class="textile-block-2">
 			<img src="<?= SITE_DIR ?>/local/assets/images/menu2.png" alt="Textile 2">
 			<p>Towels</p>
 		</a>
 
-		<a href="<?= SITE_DIR ?>/catalog.html" class="textile-block-3">
+		<a href="<?= SITE_DIR ?>/catalog.php" class="textile-block-3">
 			<img src="<?= SITE_DIR ?>/local/assets/images/menu3.png" alt="Textile 3">
 			<p>Bedcover</p>
 		</a>
 	</div>
 
 	<div class="textile-blocks">
-		<a href="<?= SITE_DIR ?>/catalog.html" class="textile-block-3">
+		<a href="<?= SITE_DIR ?>/catalog.php" class="textile-block-3">
 			<img src="<?= SITE_DIR ?>/local/assets/images/menu4.png" alt="Textile 4">
 			<p>Robe</p>
 		</a>
 
-		<a href="<?= SITE_DIR ?>/catalog.html" class="textile-block-1">
+		<a href="<?= SITE_DIR ?>/catalog.php" class="textile-block-1">
 			<img src="<?= SITE_DIR ?>/local/assets/images/menu5.png" alt="Textile 5">
 			<p>Tablecloths</p>
 		</a>
 
-		<a href="<?= SITE_DIR ?>/catalog.html" class="textile-block-2">
+		<a href="<?= SITE_DIR ?>/catalog.php" class="textile-block-2">
 			<img src="<?= SITE_DIR ?>/local/assets/images/menu6.png" alt="Textile 6">
 			<p>Others</p>
 		</a>
@@ -116,8 +117,11 @@ include $_SERVER['DOCUMENT_ROOT'].SITE_DIR."/local/templates/modal-register.php"
 include $_SERVER['DOCUMENT_ROOT'].SITE_DIR."/local/templates/footer.php";
 ?>
 
-<script src="<?= SITE_DIR ?>/local/assets/js/script.js"></script>
-
 </body>
 
 </html>
+<?php
+require_once "./local/templates/epilog.php";
+?>
+
+<!-- http://localhost:8000/phpmyadmin/index.php?route=/sql&db=home_textile&table=users&pos=0 -->

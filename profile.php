@@ -1,5 +1,6 @@
 <?php
-require_once "./local/source/init.php"
+require_once "./local/templates/prolog.php";
+require_once "./local/source/init.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,19 +10,6 @@ include $_SERVER['DOCUMENT_ROOT'].SITE_DIR."/local/templates/head.php";
 ?>
 
 <body>
-<header>
-	<nav>
-		<ul>
-			<li class="logo"><a href="index.php"><img src="images/logo.png" alt="Logo" width="80" height="80"></a></li>
-			<li><a href="index.php">Home</a></li>
-			<li><a href="products.html">Products</a></li>
-			<li><a href="about-us.php">About Us</a></li>
-			<li class="cart"><a href="cart.html"><img src="images/cart.png" alt="Cart" width="40" height="40"></a></li>
-			<li class="person"><a href="profile.html"><img src="images/personFilled.png" alt="Person" width="40"
-														   height="40"></a></li>
-		</ul>
-	</nav>
-</header>
 
 <?php
 include $_SERVER['DOCUMENT_ROOT'].SITE_DIR."/local/templates/header.php";
@@ -37,21 +25,21 @@ include $_SERVER['DOCUMENT_ROOT'].SITE_DIR."/local/templates/header.php";
 					<div class="form-container-one">
 						<div class="form-group">
 							<label for="name">Name</label>
-							<input type="text" id="name" placeholder="Enter your name">
+							<input type="text" id="profileName" placeholder="Enter your name">
 						</div>
 						<div class="form-group">
 							<label for="phoneNumber">Phone Number</label>
-							<input type="text" id="phoneNumber" placeholder="Enter your phone number">
+							<input type="text" id="profilePhoneNumber" placeholder="Enter your phone number">
 						</div>
 					</div>
 					<div class="form-container-two">
 						<div class="form-group">
 							<label for="email">Email</label>
-							<input type="email" id="email" placeholder="Enter your email">
+							<input type="email" id="profileEmail" placeholder="Enter your email">
 						</div>
 						<div class="form-group">
 							<label for="username">Username</label>
-							<input type="text" id="username" placeholder="Enter your username">
+							<input type="text" id="profileUsername" placeholder="Enter your username">
 						</div>
 					</div>
 				</div>
@@ -78,7 +66,9 @@ include $_SERVER['DOCUMENT_ROOT'].SITE_DIR."/local/templates/header.php";
 include $_SERVER['DOCUMENT_ROOT'].SITE_DIR."/local/templates/footer.php";
 ?>
 
-<script src="./local/assets/js/script.js"></script>
 </body>
 
 </html>
+<?php
+require_once "./local/templates/epilog.php";
+?>

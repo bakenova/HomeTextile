@@ -4,7 +4,7 @@
 		<div class="modal-title-reg">
 			<h2>Registration</h2>
 		</div>
-		<div class="form-container-gen">
+		<div class="form-container-gen-reg">
 			<div class="form-container-one">
 				<div class="form-group">
 					<label for="name">Name</label>

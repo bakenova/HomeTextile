@@ -3,7 +3,7 @@
 	<div class="modal-content">
 		<h2 class="modal-title">Authorization</h2>
 		<div class="form-container">
-			<form>
+			<form action="" method="post">
 				<div class="form-group">
 					<label for="signInUsername">Username or Email:</label>
 					<input type="text" id="signInUsername" name="username" placeholder="Enter your username or email">
