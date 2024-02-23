@@ -14,13 +14,15 @@ if (!$isAuthorized)
 				</li>
 				<li class="logo">
 					<a href="<?= SITE_DIR ?>/index.php">
-						<img src="<?= SITE_DIR ?>/local/assets/images/logo.png" alt="Logo" width="80" height="80"></a>
+						<img src="<?= SITE_DIR ?>/local/assets/images/logo.png" alt="Logo"
+							 height="80" width="80"/>
+					</a>
 				</li>
 				<li>
 					<a href="<?= SITE_DIR ?>/about-us.php">About Us</a>
 				</li>
 				<li>
-					<a href="#" onclick="openSignInModal()">Sign In</a>
+					<a href="#" onclick="OpenSignInModal()">Sign In</a>
 				</li>
 			</ul>
 		</nav>
@@ -36,8 +38,10 @@ else
 			<ul>
 				<li class="logo">
 					<a href="<?= SITE_DIR ?>/index.php">
-						<img src="<?= SITE_DIR ?>/local/assets/images/logo.png" alt="Logo" width="80"
-							 height="80"></a>
+						<img src="<?= SITE_DIR ?>/local/assets/images/logo.png" alt="Logo"
+							 height="80" width="80"
+						/>
+					</a>
 				</li>
 				<li>
 					<a href="<?= SITE_DIR ?>/index.php">Home</a>
@@ -50,14 +54,20 @@ else
 				</li>
 				<li class="cart">
 					<a href="<?= SITE_DIR ?>/cart.php">
-						<img src="<?= SITE_DIR ?>/local/assets/images/cart.png" alt="Cart" width="40"
-							 height="40"></a>
+						<img src="<?= SITE_DIR ?>/local/assets/images/cart.png" alt="Cart"
+							 height="40" width="40"
+						/>
+					</a>
 				</li>
 				<li class="person">
 					<a href="<?= SITE_DIR ?>/profile.php">
 						<img src="<?= SITE_DIR ?>/local/assets/images/personFilled.png" alt="Person"
-							 width="40"
-							 height="40"></a>
+							 height="40" width="40"
+						/>
+					</a>
+				</li>
+				<li>
+					<a href="<?= SITE_DIR ?>/?logout=Y">Logout</a>
 				</li>
 			</ul>
 		</nav>

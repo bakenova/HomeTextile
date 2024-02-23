@@ -1,20 +1,20 @@
 const siteDir = "/HomeTextile";
 
-function openSignInModal() {
+function OpenSignInModal() {
 	event.preventDefault();
 	document.getElementById('authorizationBox').style.display = 'block';
 	document.getElementById('overlay').style.display = 'block';
 	return false;
 }
 
-function closeSignInModal() {
+function CloseSignInModal() {
 	event.preventDefault();
 	document.getElementById('authorizationBox').style.display = 'none';
 	document.getElementById('overlay').style.display = 'none';
 	return false;
 }
 
-function toggleRegistrationBox() {
+function ToggleRegistrationBox() {
 	event.preventDefault();
 
 	var registrationBox = document.getElementById('registrationBox');
@@ -27,9 +27,9 @@ function toggleRegistrationBox() {
 	return false;
 }
 
-function toggleAuthorizationBox() {
+function ToggleAuthorizationBox() {
 	event.preventDefault();
-	
+
 	var registrationBox = document.getElementById('registrationBox');
 	var authorizationBox = document.getElementById('authorizationBox');
 
@@ -40,7 +40,7 @@ function toggleAuthorizationBox() {
 	return false;
 }
 
-function closeRegistrationBox() {
+function CloseRegistrationBox() {
 	var registrationBox = document.getElementById('registrationBox');
 
 	// Close the registration box
@@ -48,7 +48,7 @@ function closeRegistrationBox() {
 	document.getElementById('overlay').style.display = 'none';
 }
 
-function authorizeUser() {
+function AuthorizeUser() {
 	event.preventDefault();
 
 	const data = {
@@ -69,7 +69,7 @@ function authorizeUser() {
 		body: formData
 	};
 
-	const url = siteDir + '/api/auth.php';
+	const url = siteDir + '/api/user/auth.php';
 	fetch(url, requestOptions)
 		.then(response => {
 			if (!response.ok) {
@@ -80,7 +80,7 @@ function authorizeUser() {
 		.then(data => {
 			if (data.hasOwnProperty("isSuccess") && data.isSuccess) {
 				window.location.href = siteDir + "/profile.php";
-				closeSignInModal();
+				CloseSignInModal();
 			}
 			else {
 				Swal.fire({
@@ -97,7 +97,7 @@ function authorizeUser() {
 	return false;
 }
 
-function registerUser() {
+function RegisterUser() {
 	event.preventDefault();
 
 	const data = {
@@ -122,7 +122,7 @@ function registerUser() {
 		body: formData
 	};
 
-	const url = siteDir + '/api/register.php';
+	const url = siteDir + '/api/user/register.php';
 	fetch(url, requestOptions)
 		.then(response => {
 			if (!response.ok) {
@@ -133,7 +133,62 @@ function registerUser() {
 		.then(data => {
 			if (data.hasOwnProperty("isSuccess") && data.isSuccess) {
 				window.location.href = siteDir + "/profile.php";
-				closeSignInModal();
+				CloseSignInModal();
+			}
+			else {
+				Swal.fire({
+					"icon": "error",
+					"title": "Error!",
+					"text": data.errors.join("\n")
+				});
+			}
+		})
+		.catch(error => {
+			console.error('There was a problem with the fetch operation:', error);
+		});
+
+	return false;
+}
+
+function UpdateUser() {
+	event.preventDefault();
+
+	const data = {
+		login: document.getElementById("profileUsername").value,
+		name: document.getElementById("profileName").value,
+		email: document.getElementById("profileEmail").value,
+		phoneNumber: document.getElementById("profilePhoneNumber").value,
+		address: document.getElementById("address").value,
+	};
+
+	const formData = new URLSearchParams();
+	for (const key in data) {
+		formData.append(key, data[key]);
+	}
+
+	const requestOptions = {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/x-www-form-urlencoded'
+		},
+		body: formData
+	};
+
+	const url = siteDir + '/api/user/update.php';
+	fetch(url, requestOptions)
+		.then(response => {
+			if (!response.ok) {
+				throw new Error('Network response was not ok');
+			}
+			return response.json();
+		})
+		.then(data => {
+			if (data.hasOwnProperty("isSuccess") && data.isSuccess) {
+				Swal.fire({
+					icon: "success",
+					title: "Successful!",
+					text: "User updated!"
+				});
 			}
 			else {
 				Swal.fire({

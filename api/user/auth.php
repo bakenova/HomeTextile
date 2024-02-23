@@ -1,11 +1,10 @@
 <?php
+require_once "../../local/templates/prolog.php";
+require_once "../../local/source/init.php";
 
 use HomeTextile\Controllers\UserController;
 use HomeTextile\Models\User;
 use HomeTextile\Web\Response;
-
-require_once "../local/templates/prolog.php";
-require_once "../local/source/init.php";
 
 $login = $_POST['login'] ?? "";
 $password = $_POST['password'] ?? "";
@@ -23,6 +22,10 @@ if ($response->isSuccess())
 	if ($result instanceof User)
 	{
 		$_SESSION['AUTH'] = true;
+		$_SESSION['USER'] = [
+			'ID' => $result->getId(),
+			'LOGIN' => $result->getLogin(),
+		];
 	}
 	else
 	{

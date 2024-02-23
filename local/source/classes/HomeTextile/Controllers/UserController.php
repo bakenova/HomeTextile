@@ -9,48 +9,30 @@ class UserController
 {
 	public static function getUserById(int $userId): ?User
 	{
-		$sql = "SELECT * FROM `users` WHERE `ID` = ?";
+		$sql = "SELECT * FROM `users` WHERE `ID` = ? LIMIT 1";
 		$userData = DB::getInstance()->query($sql, [$userId]);
-
-		if ($userData) {
-			return new User(
-				$userData[0]['ID'],
-				$userData[0]['LOGIN'],
-				$userData[0]['PASSWORD'],
-				$userData[0]['EMAIL'],         
-				$userData[0]['PHONENUMBER'],   
-				$userData[0]['NAME']    
-			);
-		}
-	
-		return null;
+		return !empty($userData) ? new User($userData[0]) : null;
 	}
 
 	public static function getUserByLogin(string $login): ?User
 	{
 		$sql = "SELECT * FROM `users` WHERE `LOGIN` = ? LIMIT 1";
 		$userData = DB::getInstance()->query($sql, [$login]);
-
-		if ($userData) {
-			return new User(
-				$userData[0]['ID'],
-				$userData[0]['LOGIN'],
-				$userData[0]['PASSWORD'],
-				$userData[0]['EMAIL'],
-				$userData[0]['PHONENUMBER'],
-				$userData[0]['NAME']
-			);
-		}
-		return null;
+		return !empty($userData) ? new User($userData[0]) : null;
 	}
-
 
 	public static function addUser(User $user): bool
 	{
 		$hashedPassword = password_hash($user->getPassword(), PASSWORD_DEFAULT);
 
-		$sql = "INSERT INTO `users` (`LOGIN`, `PASSWORD`, `EMAIL`, `PHONENUMBER`, `NAME`) VALUES (?, ?, ?, ?, ?)";
-		$params = [$user->getLogin(), $hashedPassword, $user->getEmail(), $user->getPhoneNumber(), $user->getName() ];
+		$sql = "INSERT INTO `users` (`LOGIN`, `PASSWORD`, `EMAIL`, `PHONE_NUMBER`, `NAME`) VALUES (?, ?, ?, ?, ?)";
+		$params = [
+			$user->getLogin(),
+			$hashedPassword,
+			$user->getEmail(),
+			$user->getPhoneNumber(),
+			$user->getName(),
+		];
 
 		$result = DB::getInstance()->query($sql, $params);
 
@@ -61,14 +43,46 @@ class UserController
 	{
 		$existingUser = self::getUserById($user->getId());
 
+		$arValues = [];
+
+		if ($user->getLogin() !== $existingUser->getLogin())
+		{
+			$arValues['LOGIN'] = $user->getLogin();
+		}
 		if ($user->getPassword() !== $existingUser->getPassword())
 		{
 			$hashedPassword = password_hash($user->getPassword(), PASSWORD_DEFAULT);
 			$user->setPassword($hashedPassword);
+			$arValues['PASSWORD'] = $hashedPassword;
+		}
+		if ($user->getEmail() !== $existingUser->getEmail())
+		{
+			$arValues['EMAIL'] = $user->getEmail();
+		}
+		if ($user->getPhoneNumber() !== $existingUser->getPhoneNumber())
+		{
+			$arValues['PHONE_NUMBER'] = $user->getPhoneNumber();
+		}
+		if ($user->getName() !== $existingUser->getName())
+		{
+			$arValues['NAME'] = $user->getName();
+		}
+		if ($user->getAddress() !== $existingUser->getAddress())
+		{
+			$arValues['ADDRESS'] = $user->getAddress();
 		}
 
-		$sql = "UPDATE `users` SET `LOGIN` = ?, `PASSWORD` = ? WHERE `ID` = ?";
-		$params = [$user->getLogin(), $user->getPassword(), $user->getId()];
+		$set = [];
+		$params = [];
+		foreach ($arValues as $key => $value)
+		{
+			$set[] = "`$key` = ?";
+			$params[] = $value;
+		}
+		$set = implode(", ", $set);
+
+		$sql = "UPDATE `users` SET $set WHERE `ID` = ?";
+		$params[] = $user->getId();
 
 		$result = DB::getInstance()->query($sql, $params);
 

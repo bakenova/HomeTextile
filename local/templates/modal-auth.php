@@ -12,14 +12,14 @@
 					<label for="signInPassword">Password:</label>
 					<input type="password" id="signInPassword" name="password" placeholder="Enter your password">
 				</div>
-				<button type="submit" onclick="authorizeUser()">Sign In</button>
+				<button type="submit" onclick="AuthorizeUser()">Sign In</button>
 			</form>
-			<span class="close" onclick="closeSignInModal()">&times;</span>
+			<span class="close" onclick="CloseSignInModal()">&times;</span>
 		</div>
 
 		<div class="register-link">
 			<p>Don't Have an Account Yet? <a href="#" class="register-now-link"
-											 onclick="toggleRegistrationBox()">Register now</a></p>
+											 onclick="ToggleRegistrationBox()">Register now</a></p>
 		</div>
 	</div>
 </div>
