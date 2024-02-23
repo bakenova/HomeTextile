@@ -25,14 +25,29 @@ class UserController
 	{
 		$hashedPassword = password_hash($user->getPassword(), PASSWORD_DEFAULT);
 
-		$sql = "INSERT INTO `users` (`LOGIN`, `PASSWORD`, `EMAIL`, `PHONE_NUMBER`, `NAME`) VALUES (?, ?, ?, ?, ?)";
-		$params = [
-			$user->getLogin(),
-			$hashedPassword,
-			$user->getEmail(),
-			$user->getPhoneNumber(),
-			$user->getName(),
+		$arValues = [
+			'LOGIN' => $user->getLogin(),
+			'PASSWORD' => $hashedPassword,
+			'EMAIL' => $user->getEmail(),
+			'PHONE_NUMBER' => $user->getPhoneNumber(),
+			'NAME' => $user->getName(),
+			'ADDRESS' => $user->getAddress(),
 		];
+
+		$insert = [];
+		$values = [];
+
+		foreach ($arValues as $key => $value)
+		{
+			$insert[] = "`$key`";
+			$values[] = "?";
+		}
+
+		$insert = implode(", ", $insert);
+		$values = implode(", ", $values);
+
+		$sql = "INSERT INTO `users` ($insert) VALUES ($values)";
+		$params = array_values($arValues);
 
 		$result = DB::getInstance()->query($sql, $params);
 
@@ -74,11 +89,13 @@ class UserController
 
 		$set = [];
 		$params = [];
+
 		foreach ($arValues as $key => $value)
 		{
 			$set[] = "`$key` = ?";
 			$params[] = $value;
 		}
+
 		$set = implode(", ", $set);
 
 		$sql = "UPDATE `users` SET $set WHERE `ID` = ?";
