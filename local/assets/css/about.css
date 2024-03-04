@@ -1,4 +1,9 @@
 /* Story section */
+.page-container {
+    display: flex;
+    flex-direction: column;
+}
+
 .about-section {
     text-align: left;
     padding: 20px;

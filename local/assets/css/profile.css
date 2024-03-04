@@ -1,6 +1,5 @@
 
-
-main {
+.profile-main {
     padding: 20px;
     display: flex;
     flex-direction: row;
@@ -75,7 +74,7 @@ main {
 footer {
     background-color: #333;
     color: white;
-    padding: 20px 0;
+    /* padding: 20px 0; */
 }
 
 .footer-container {

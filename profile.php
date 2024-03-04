@@ -24,7 +24,7 @@ include $_SERVER['DOCUMENT_ROOT'].SITE_DIR."/local/templates/head.php";
 include $_SERVER['DOCUMENT_ROOT'].SITE_DIR."/local/templates/header.php";
 ?>
 
-<main>
+<main class = "profile-main">
 	<section class="user-info">
 		<h2 class="user-title">Hello there, <?= $user->getLogin() ?>!</h2>
 

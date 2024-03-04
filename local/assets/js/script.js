@@ -48,6 +48,23 @@ function CloseRegistrationBox() {
 	document.getElementById('overlay').style.display = 'none';
 }
 
+function ToggleLike() {
+    // Get the like image element
+    var likeImage = document.getElementById("likeImage");
+
+    // Check if the element is found
+    if (likeImage !== null) {
+        // Toggle between empty and filled heart images
+        if (likeImage.src.indexOf("heart-empty.png") !== -1) {
+            likeImage.src = "<?= SITE_DIR ?>/local/assets/images/heart-filled.png"; 
+        } else {
+            likeImage.src = "<?= SITE_DIR ?>/local/assets/images/heart-empty.png"; 
+        }
+    } else {
+        console.error("Element with id 'likeImage' not found.");
+    }
+}
+
 function AuthorizeUser() {
 	event.preventDefault();
 

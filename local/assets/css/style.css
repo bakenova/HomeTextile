@@ -71,7 +71,7 @@ nav a:hover {
 	width: calc(100% - 48px);
 	height: 600px;
 	overflow: hidden;
-	margin: auto; /* Center the welcome section */
+	margin: auto; 
 }
 
 .welcome-section img {
@@ -81,7 +81,7 @@ nav a:hover {
 	border-radius: 20px;
 }
 
-.overlay {
+.overlay-photo {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -279,11 +279,11 @@ nav a:hover {
 footer {
 	background-color: #333;
 	color: #fff;
-	padding: 20px;
+	/* padding: 20px; */
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	margin-top: 40px;
+	/* margin-top: 40px; */
 }
 
 .footer-container {

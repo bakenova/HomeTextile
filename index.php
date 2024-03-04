@@ -1,6 +1,7 @@
 <?php
 require_once "./local/templates/prolog.php";
 require_once "./local/source/init.php";
+// require './composer/src/dialogflow.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,15 +23,15 @@ include $_SERVER['DOCUMENT_ROOT'].SITE_DIR."/local/templates/modal-register.php"
 
 <!-- Welcome Section  -->
 <div class="button-container">
-	<button class="left-button">&lt;</button>
+	<!-- <button class="left-button">&lt;</button> -->
 	<div class="welcome-section">
 		<img src="<?= SITE_DIR ?>/local/assets/images/image2.jpg" alt="Welcome Image">
-		<div class="overlay">
+		<div class="overlay-photo">
 			<p class="welcome-text">Welcome to Our Home Textile Store</p>
 			<p class="sub-text">Discover the comfort and style for your home with our premium textiles</p>
 		</div>
 	</div>
-	<button class="right-button">&gt;</button>
+	<!-- <button class="right-button">&gt;</button> -->
 </div>
 
 <!-- Purchase Steps Section -->
@@ -112,6 +113,15 @@ include $_SERVER['DOCUMENT_ROOT'].SITE_DIR."/local/templates/modal-register.php"
 		</div>
 	</div>
 </div>
+
+<df-messenger
+  intent="WELCOME"
+  chat-title="HomeTextile"
+  agent-id="6f9ba137-2f77-4c8d-97e2-1cba0fdc7b2d"
+  language-code="en"
+></df-messenger>
+
+<!-- <iframe height="430" width="350" src="https://bot.dialogflow.com/6f9ba137-2f77-4c8d-97e2-1cba0fdc7b2d"></iframe> -->
 
 <?php
 include $_SERVER['DOCUMENT_ROOT'].SITE_DIR."/local/templates/footer.php";

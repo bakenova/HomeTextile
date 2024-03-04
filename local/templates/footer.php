@@ -74,5 +74,9 @@
 	<p class="copyright-text">© 2024 Home Textile. All rights reserved.</p>
 </footer>
 
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js"></script>
+
+<script src="<?= SITE_DIR ?>/local/assets/js/dialogflow-init.js"></script>
+
 <script src="<?= SITE_DIR ?>/local/assets/libraries/sweetalert2/dist/sweetalert2.min.js"></script>
 <script src="<?= SITE_DIR ?>/local/assets/js/script.js"></script>

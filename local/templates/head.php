@@ -10,4 +10,5 @@
 	<link rel="stylesheet" href="<?= SITE_DIR ?>/local/assets/css/style.css"/>
 	<link rel="stylesheet" href="<?= SITE_DIR ?>/local/assets/css/about.css"/>
 	<link rel="stylesheet" href="<?= SITE_DIR ?>/local/assets/css/profile.css"/>
+	<link rel="stylesheet" href="<?= SITE_DIR ?>/local/assets/css/products.css"/>
 </head>

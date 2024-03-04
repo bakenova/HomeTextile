@@ -1,0 +1,231 @@
+.products-search {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items: left;
+    margin: 40px;
+    height: 400px;
+}
+
+.welcome-section-products {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+    width: 30%;
+    position: relative;
+	height: 600px;
+	overflow: hidden;
+	margin: auto; 
+}
+
+/* Filter Box Styles */
+.filter-box {
+    text-align: center;
+    background-color: #F4F4F4;
+    width: 50%;
+    /* height: 250px; */
+    border-radius: 20px;
+    margin: 20px auto; 
+    position: relative;
+}
+
+.filter-box:hover {
+    box-shadow: 0 0 10px rgba(217, 217, 217, 0.4);
+}
+
+.filter-box p {
+    font-weight: bold;
+}
+
+.box-title {
+    margin-top: 40px;
+}
+
+.filter-box select {
+    width: 250px;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 8px;
+}
+
+.filter-box select option {
+    font-size: 12px; 
+}
+
+.filter-box button {
+    background-color: #950C3D;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.selects {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; 
+}
+
+.select {
+    margin: 0 10px;
+    justify-content: space-between;
+}
+
+.select-struct {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 100px;
+    text-align: left;
+}
+
+.select-text {
+    font-size: 12px; 
+}
+
+
+/* Search block */
+
+.search-block {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+    padding: 5px; 
+    max-width: 400px;
+    margin: 0 auto; 
+}
+
+#searchInput {
+    padding: 8px;
+    margin: 0 5px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.separator {
+    margin: 0 5px;
+}
+
+.search-container img {
+    width: 20px; /* Adjust the size of the images as needed */
+    height: 20px;
+}
+
+
+/* Catalog */
+
+.catalog {
+    text-align: center;
+    margin: 60px auto;
+}
+
+.catalog h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.cat-desc {
+    font-style: italic;
+}
+
+
+/* Product Items */
+
+.product-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 60px 0;
+}
+
+.product {
+    width: 350px;
+    height: auto;
+    background-color: #F4F4F4; /* Add your own background color or product styling */
+    /* margin: 0 10px; Adjust margin as needed */
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.product:hover {
+    box-shadow: 0 0 10px rgba(217, 217, 217, 0.4);
+}
+
+.product-images{
+    display: flex;
+    flex-direction: row;
+}
+
+.main-image {
+    width: 70%;
+    height: 100px;
+    margin: 30px 20px;
+}
+
+.main-image img {
+    width: 260px;
+    height: 150px;
+    object-fit: cover; 
+    border-radius: 10px;
+}
+
+.small-images {
+    width: 30%;
+    /* display: flex; */
+    flex-direction: column;
+    margin: 20px 20px; 
+    cursor: pointer;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+
+#likeImage {
+    margin-top: 10px;
+    width: 25px; /* Adjust the width of the likeImage as needed */
+    height: 25px; /* Adjust the height of the likeImage as needed */
+}
+
+#cartImage {
+    margin-top: 10px;
+    width: 30px; /* Adjust the width of the cartImage as needed (larger than likeImage) */
+    height: 30px; /* Adjust the height of the cartImage as needed (larger than likeImage) */
+}
+
+.shape {
+    margin-top: 10px;
+    width: 100%;
+    height: 50%;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+}
+
+.product-details {
+    margin: 20px 20px 10px 20px; /* Adjust the bottom margin to create space */
+    padding-bottom: 10px; /* Add padding to the bottom for additional space */
+    text-align: left;
+    height: 100%; /* Set height to 100% to cover the entire section */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.product-name {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+
+.product-description {
+    font-size: 14px;
+    color: #555; 
+}
